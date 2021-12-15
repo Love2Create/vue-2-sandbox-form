@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat+Brush&family=Lato:ital,wght@0,400;0,900;1,300&display=swap');
+
+body{
+    font-family: 'Lato', sans-serif;
+    h3 {
+        font-weight: 900;
+        font-size: $formLarge;
+    }
+    .formLabel{
+        font-size: $formTiny;
+    }
+}

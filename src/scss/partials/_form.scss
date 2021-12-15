@@ -1,0 +1,17 @@
+.form-mainDiv-stack{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+}
+.form-el-div-stack{
+    display: flex;
+    flex-direction: column;
+    width: 10em;
+    margin: 0.2em 0em;
+}
+.form-button-div, .form-select-div{
+    display: flex;
+    margin: 0.2em 0em;
+}

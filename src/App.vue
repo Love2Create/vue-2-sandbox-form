@@ -1,28 +1,52 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="form-mainDiv-stack">
+    <h3>Fill Out This Form</h3>
+    <FormTextField name="firstName" identifier="firstName" bodyText="First Name" @value-change="textEntered"/>
+    <FormSelect :choices="options" :start="1" @value-change="pickedOne" />
+    <FormButton bodyText="submit" @value-change="buttonClicked" />
+    <FormDate type="date" label="Date" @value-change="dateSelected"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import FormTextField from "./components/FormTextField.vue";
+import FormButton from "./components/FormButton.vue";
+import FormSelect from "./components/FormSelect.vue";
+import FormDate from "./components/FormDate.vue";
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    FormTextField,
+    FormButton,
+    FormSelect,
+    FormDate,
+  },
+  data(){
+    return{
+      options:[
+        "apple", "orange", "banana"
+      ],
+      selectedDate:"",
+    }
+  },
+  methods:{
+    dateSelected(e){
+      console.log("date: "+e);
+    },
+    buttonClicked(){
+      console.log("clicked");
+    },
+    textEntered(e){
+      console.log(e);
+    },
+    pickedOne(e){
+      console.log(this.options[e]);
+    }
   }
 }
 </script>
 
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+@import "./scss/app.scss";
 </style>
