@@ -23,6 +23,12 @@ export default{
         bodyText: {
             type: String,
             default: "text",
+        },
+        maximumWidth:{
+            type: Number,
+        },
+        minimumWidth:{
+            type: Number,
         }
     },
     methods:{
